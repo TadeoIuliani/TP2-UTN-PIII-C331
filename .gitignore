@@ -1,6 +1,6 @@
 #ignorar la carpeta de modulos de node
 node_modules/
-
+README.md
 #ignorar archivos de  entorno sensible
 .env
 
