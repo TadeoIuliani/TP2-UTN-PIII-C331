@@ -5,14 +5,17 @@ const port = 3000
 const app = express()
 
 const productosRouter = require("./routes/productosRouter")
+const vendedorRouter = require("./routes/vendedoresRouter")
 app.use(express.json()) //analiza los request
 
 
 app.use("/productos", productosRouter)
+app.use("/vendedores", vendedorRouter)
 
 const conexionDB = async ()=>{
     try {
         await db.authenticate()
+        await db.sync()
         console.log("conexion ok a la base de datos");
         
     } catch (error) {
