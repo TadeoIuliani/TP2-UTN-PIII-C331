@@ -14,7 +14,6 @@ const traerVendedores =  async (req,res) =>{
             filter.ubicacion = type
         }
 
-        /* const order = [["createdAt", sort.toUpperCase() === "DESC" ? "DESC" : "ASC"]]; */
 
         const vendedores = await vendedorModel.findAll({
             where: filter, // Aquí pasamos los filtros dinámicos

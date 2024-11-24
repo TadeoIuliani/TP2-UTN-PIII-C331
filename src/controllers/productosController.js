@@ -21,9 +21,6 @@ const traerProductos = async (req,res)=>{
         const order = [["createdAt", sort.toUpperCase() === "DESC" ? "DESC" : "ASC"]];
 
         const productos = await productoModel.findAll({
-            /* include: {
-                model: vendedorModel
-            } */
             where: filter, // Aquí pasamos los filtros dinámicos
             limit: limitInt,  // Límite de registros por página
             offset: offset, // Desplazamiento para la paginación

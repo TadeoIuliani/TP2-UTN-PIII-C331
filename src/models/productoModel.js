@@ -43,7 +43,7 @@ const productoModel = db.define("productos", {
         allowNull: false
     }
 }, {
-    timestamps: true, // Ya que estamos usando `createdAt` y `updatedAt` manualmente
+    timestamps: true, 
 });
 
 // Relación con el modelo Vendedor (asociación de 1:N)

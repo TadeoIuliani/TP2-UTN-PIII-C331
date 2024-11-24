@@ -1,7 +1,5 @@
-
-
 const { DataTypes } = require('sequelize');
-const db = require("../data/db"); // Asegúrate de importar tu instancia de Sequelize
+const db = require("../data/db"); 
 
 const vendedorModel = db.define("vendedores", {
     id: {
@@ -23,7 +21,7 @@ const vendedorModel = db.define("vendedores", {
         allowNull: false
     }
 }, {
-    timestamps: true, // Ya que estamos usando `createdAt` y `updatedAt` manualmente
+    timestamps: true, 
 });
 
 // Relación con el modelo Producto (asociación de 1:N)

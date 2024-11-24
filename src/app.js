@@ -1,12 +1,22 @@
 const express = require("express")
 const path = require("path")
 const db = require("./data/db")
-const port = 3000
+
+require('dotenv').config();
+//Swagger
+const { swaggerUi, swaggerSpecs } = require('../swaggerConfig');
+
+const port = process.env.PORT
+
 const app = express()
 
 const productosRouter = require("./routes/productosRouter")
 const vendedorRouter = require("./routes/vendedoresRouter")
 app.use(express.json()) //analiza los request
+
+// Middleware de Swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+
 
 
 app.use("/productos", productosRouter)
@@ -26,4 +36,5 @@ const conexionDB = async ()=>{
 app.listen(port, ()=>{
     conexionDB()
     console.log(`conexion exitosa ${port}`);
+    console.log(`Documentación disponible en http://localhost:${port}/api-docs`);
 })

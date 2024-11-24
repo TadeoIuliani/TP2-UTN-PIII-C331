@@ -7,5 +7,4 @@ const db = new Sequelize("gestion_productos", "root", "",{
     port : 3306
 })
 
-
 module.exports = db
