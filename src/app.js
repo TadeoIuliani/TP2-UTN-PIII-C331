@@ -1,12 +1,13 @@
 const express = require("express")
 const path = require("path")
 const db = require("./data/db")
-
 require('dotenv').config();
+
 //Swagger
 const { swaggerUi, swaggerSpecs } = require('../swaggerConfig');
 
 const port = process.env.PORT
+console.log('Puerto desde .env:', process.env.PORT);
 
 const app = express()
 
@@ -37,4 +38,6 @@ app.listen(port, ()=>{
     conexionDB()
     console.log(`conexion exitosa ${port}`);
     console.log(`Documentación disponible en http://localhost:${port}/api-docs`);
+    /* console.log('Puerto cargado desde .env:', process.env.PORT); */
+
 })
