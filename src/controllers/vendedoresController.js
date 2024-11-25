@@ -40,8 +40,29 @@ const agregarVendedor = async (req,res) =>{
 
 const traerVendedor = async (req,res) =>{
     try {
+
+        const { productosBool = false} = req.query;
+    
         const vendedor = await vendedorModel.findByPk(req.params.id)
-        res.json(vendedor)
+        /* const filter = {} */
+        if (productosBool){
+            const productosOrm =  await productoModel.findAll({
+                where: {vendedor_id : vendedor.id}
+            })
+            res.json({
+                id : vendedor.id,
+                nombre : vendedor.nombre,
+                apellido : vendedor.apellido,
+                ubicacion: vendedor.ubicacion,
+                createdAt : vendedor.createdAt,
+                updatedAt: vendedor.updatedAt,
+                productos : productosOrm
+            })
+        }
+        else{
+            res.json(vendedor)
+        }
+        
     } catch (error) {
         res.json({message:error.message})
     }
