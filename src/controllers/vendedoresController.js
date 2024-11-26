@@ -14,16 +14,15 @@ const traerVendedores =  async (req,res) =>{
             filter.ubicacion = type
         }
 
-
         const vendedores = await vendedorModel.findAll({
             where: filter, // Aquí pasamos los filtros dinámicos
             limit: limitInt,  // Límite de registros por página
             offset: offset, // Desplazamiento para la paginación
         })
-        res.json(vendedores)
+        res.status(200).json(vendedores)
     } 
     catch (error) {
-        res.json({message:error.message})
+        res.status(500).json({message:error.message})
     }
 
 }
@@ -31,10 +30,11 @@ const traerVendedores =  async (req,res) =>{
 const agregarVendedor = async (req,res) =>{
     try {
         const vendedor = await vendedorModel.create(req.body)
-        res.json(`Vendedor creado: ${vendedor.nombre}`)
+        res.status(201).json(`Vendedor creado: ${vendedor.nombre}`);
 
     } catch (error) {
-        res.json({message:error.message})
+        // Devolver error 500 si ocurre un problema en el servidor
+        res.status(500).json({ message: error.message });
     }
 }
 
@@ -60,11 +60,11 @@ const traerVendedor = async (req,res) =>{
             })
         }
         else{
-            res.json(vendedor)
+            res.status(200).json(vendedor);
         }
-        
     } catch (error) {
-        res.json({message:error.message})
+        // Devolver error 500 si ocurre un problema en el servidor
+        res.status(500).json({ message: error.message });
     }
 }
 
@@ -73,9 +73,10 @@ const eliminarVendedor = async (req,res) =>{
         await vendedorModel.destroy({
             where:{id:req.params.id}
         })
-        res.json("Vendedor eliminado")
+        res.status(200).json("Vendedor eliminado");
     } catch (error) {
-        res.json({message:error.message})
+        // Devolver error 500 si ocurre un problema en el servidor
+        res.status(500).json({ message: error.message });
     }
 }
 

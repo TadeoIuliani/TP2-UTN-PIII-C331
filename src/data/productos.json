@@ -1,0 +1,63 @@
+[
+    {
+      "nombre": "Camiseta River Plate 2024",
+      "descripcion": "Camiseta oficial de River Plate para la temporada 2024, diseñada para los fanáticos del Millonario.",
+      "precio": 7799,
+      "status": "Disponible",
+      "calificacion": 4.5,
+      "stock": 100,
+      "marca": "Adidas",
+      "vendedor_id": 1
+    },
+    {
+      "nombre": "Camiseta PSG 2024",
+      "descripcion": "Camiseta oficial del Paris Saint-Germain de la temporada 2024, con los colores icónicos del club.",
+      "precio": 8999,
+      "status": "Disponible",
+      "calificacion": 4.7,
+      "stock": 80,
+      "marca": "Nike",
+      "vendedor_id": 3
+    },
+    {
+      "nombre": "Camiseta Manchester City 2024",
+      "descripcion": "Camiseta oficial del Manchester City para la temporada 2024, perfecta para los verdaderos ciudadanos.",
+      "precio": 8499,
+      "status": "Disponible",
+      "calificacion": 4.8,
+      "stock": 150,
+      "marca": "Puma",
+      "vendedor_id": 2
+    },
+    {
+      "nombre": "Camiseta Juventus 2024 Alternativa",
+      "descripcion": "Camiseta alternativa oficial de la Juventus para la temporada 2024, ideal para coleccionistas.",
+      "precio": 7999,
+      "status": "Disponible",
+      "calificacion": 4.2,
+      "stock": 120,
+      "marca": "Adidas",
+      "vendedor_id": 1
+    },
+    {
+      "nombre": "Camiseta Selección Argentina 2024",
+      "descripcion": "Camiseta oficial de la Selección Argentina para la temporada 2024, diseñada para los campeones del mundo.",
+      "precio": 9199,
+      "status": "Disponible",
+      "calificacion": 5.0,
+      "stock": 50,
+      "marca": "Adidas",
+      "vendedor_id": 3
+    },
+    {
+      "nombre": "Camiseta Barcelona 2024 Edición Especial",
+      "descripcion": "Camiseta edición especial del FC Barcelona para la temporada 2024, diseñada para los hinchas más apasionados.",
+      "precio": 9999,
+      "status": "Disponible",
+      "calificacion": 4.9,
+      "stock": 70,
+      "marca": "Nike",
+      "vendedor_id": 2
+    }
+  ]
+  

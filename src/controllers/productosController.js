@@ -27,7 +27,7 @@ const traerProductos = async (req,res)=>{
             order: order,  // Ordenar por fecha de creación (ASC o DESC)
         
         })
-        res.json(productos)
+        res.status(200).json(productos)
     } catch (error) {
         res.json({message:error.message})
     }
@@ -36,18 +36,18 @@ const traerProductos = async (req,res)=>{
 const traerProductoId = async (req,res)=>{
     try {
         const producto = await productoModel.findByPk(req.params.id)
-        res.json(producto)
+        res.status(200).json(producto)
     } catch (error) {
-        res.json({message:error.message})
+        res.status(500).json({message:error.message})
     }
 };
 
 const agregarProducto = async (req,res)=>{
     try {
         await productoModel.create(req.body)
-        res.json("Registro exitoso")
+        res.status(201).json("Registro exitoso")
     } catch (error) {
-        res.json({message:error.message})
+        res.status(500).json({message:error.message})
     }
 };
 
@@ -56,9 +56,12 @@ const actualizarProducto = async (req,res)=>{
         await productoModel.update(req.body, {
             where:{id:req.params.id}
         })
-        res.json("Registro actualzado")
+
+        
+        res.status(200).json("Registro actualizado");
     } catch (error) {
-        res.json({message:error.message})
+        
+        res.status(500).json({ message: error.message });
     }
 };
 
@@ -67,9 +70,9 @@ const eliminarProducto = async (req,res)=>{
         await productoModel.destroy({
             where:{id:req.params.id}
         })
-        res.json("Registro elimnado")
+        res.status(200).json("Registro elimnado")
     } catch (error) {
-        res.json({message:error.message})
+        res.status(500).json({message:error.message})
     }
 };
 
