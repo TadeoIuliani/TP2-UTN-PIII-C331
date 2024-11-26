@@ -19,7 +19,7 @@ Descripcion de la API:
 
 Archivos para agregar Productos y Vendedores:
   - data/productos.json
-  - data/
+  - data/vendedores.json
 
 Para ver la documentacion de las APIS a mas detalle:
 http://localhost:3000/api-docs
@@ -63,7 +63,7 @@ Este comando hará lo siguiente:
 ### 6. **Iniciar el servidor Node.js**
 El comando es:
 ```bash
-npm start
+node src/app.js
 ```
 Esto ejecutará tu aplicación Node.js y debería escuchar en el puerto 3000 (por defecto). Puedes verificar que el servidor está en funcionamiento abriendo tu navegador y accediendo a http://localhost:3000/productos
 
